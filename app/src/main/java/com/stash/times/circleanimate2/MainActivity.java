@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     CircleAngleAnimation animation = new CircleAngleAnimation(c, 360);
                     animation.setDuration(5000);
                     c.startAnimation(animation);
-                    animateTextView(0,100,tv);
+                    animateTextView(getValue,100,tv);
                 }
 
 
@@ -63,7 +63,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             valueAnimator.start();
-
-
         }
     }
