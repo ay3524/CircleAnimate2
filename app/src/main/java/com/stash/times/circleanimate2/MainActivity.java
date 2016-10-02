@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tv;
     int x = 0;
     int getValue;
+    int time = 4000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         tv = (TextView) findViewById(R.id.textView);
 
         CircleAngleAnimation animation = new CircleAngleAnimation(c, 360);
-        animation.setDuration(5000);
+        animation.setDuration(time);
         animateTextView(0,100,tv);
         c.startAnimation(animation);
         b.setOnClickListener(new View.OnClickListener() {
@@ -34,12 +35,12 @@ public class MainActivity extends AppCompatActivity {
                 x = x + 1;
                 if (x % 2 == 1) {
                     CircleAngleAnimation animation = new CircleAngleAnimation(c, 0);
-                    animation.setDuration(5000);
+                    animation.setDuration(time);
                     c.startAnimation(animation);
                     animateTextView(getValue,0,tv);
                 } else {
                     CircleAngleAnimation animation = new CircleAngleAnimation(c, 360);
-                    animation.setDuration(5000);
+                    animation.setDuration(time);
                     c.startAnimation(animation);
                     animateTextView(getValue,100,tv);
                 }
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         public void animateTextView(int initialValue, int finalValue, final TextView  textview) {
 
             ValueAnimator valueAnimator = ValueAnimator.ofInt(initialValue, finalValue);
-            valueAnimator.setDuration(5000);
+            valueAnimator.setDuration(time);
 
             valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
